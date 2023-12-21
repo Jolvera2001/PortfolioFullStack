@@ -1,0 +1,6 @@
+@PortfolioBackend_HostAddress = http://localhost:5079
+
+GET {{PortfolioBackend_HostAddress}}/
+Accept: application/json
+
+###
