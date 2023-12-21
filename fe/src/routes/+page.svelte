@@ -11,13 +11,13 @@
 
     <!-- overlay -->
     <div class="container mx-auto text-lg">
-        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32 m-10">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32">
             <div class="w-full md:w-1/2">
-                <h1 class="text-4xl font-bold leading-tight mb-4">Welcome to
-                    <span class="text-blue-500">My Portfolio Site</span></h1>
-                <h2 class="text-2xl mb-4 font-light">My name is <span class="text-blue-500">Johan</span></h2>
-                <p class="text-gray-600 mb-8"> And This site was made using Svelte kit and Tailwind CSS.
-                Here I'll show you what experiences and projects I've done, some info about me, and my contact info for any feedback or outreach.</p>
+                <h1 class="text-4xl font-bold leading-tight mb-4 ">My Name Is <span class="text-blue-500">Johan Olvera</span></h1>
+                <h2 class="text-2xl mb-4 font-light">An aspiring <span class="text-blue-500">Software Developer</span></h2>
+                <p class="text-gray-600 mb-8"> This is my site where I wanted to be able to showcase my projects and experiences so far. It was
+                also an opportunity for me to get more experience with ASP.NET, Svelte, and MongoDB. This was also a chance to practice
+                creating APIs, security, CI/CD, and Code Quality. Take a look at what I have so far!</p>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
 
 <!-- about me -->
 <!-- Two sections within the same row -->
-<div class="bg-gray-200 text-lg">
+<div class="text-lg">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row items-center justify-center md:justify-between py-12 p-32 m-10">
             <div class="w-full md:w-1/2 bg-cover">
@@ -36,9 +36,8 @@
                 <h1 class="text-4xl font-bold leading-tight mb-6">About Me</h1>
                 <p class="text-gray-600 mb-8">I'm currently a student at St. Edward's University pursing a bachelor's in Computer Science.
                     I'm a senior and will be graduating in December of 2024. I'm currently seeking employment and other
-                opportunities to start a career in Software Engineering. I'm constantly learning new frameworks and tools that
-                can be used to develop different kinds of applications, but I'm also excited to come up with more projects
-                in order to gain more experience.</p>
+                opportunities to start a career in Software Development. I'm constantly learning new frameworks and tools that
+                can be used to develop different kinds of applications, but I'm also excited to start new projects with the technologies I've learned.</p>
             </div>
         </div>
     </div>

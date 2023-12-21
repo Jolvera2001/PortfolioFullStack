@@ -18,6 +18,7 @@
 </script>
 
 <!-- tab selection buttons -->
+<div class="border-b-4"></div>
 <div class="flex justify-evenly">
     <button class="p-8 mx-2 text-2xl" on:click={() => switchTab('experience')}>
         Experience
