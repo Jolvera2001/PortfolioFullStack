@@ -2,18 +2,14 @@
     import '../app.css'
 </script>
 
-<div class="bg-gray-200 p-4">
+<div class="p-4">
 	<div class="container mx-auto px-4">
-		<nav class="flex items-center justify-between h-16">
-			<!-- Some logo or brand here -->
-<!--			<div class="flex-shrink-0">-->
-<!--				<a href="/" class="text-2xl font-bold">Logo</a>-->
-<!--			</div>-->
-
+		<nav class="flex items-center justify-center h-16">
 			<div class="flex">
-				<a href="/" class="px-4 py-2 text-xl">Home</a>
-				<a href="/projects" class="px-4 py-2 text-xl">Projects/Experiences</a>
-				<a href="/" class="px-4 py-2 text-xl">Contact</a>
+				<a href="/" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Home</a>
+				<a href="/projects" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Projects/Experiences</a>
+				<a href="/" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Contact</a>
+				<a href="/blog" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Blog</a>
 			</div>
 		</nav>
 	</div>
