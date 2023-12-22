@@ -1,78 +1,127 @@
 <script>
  import {goto} from '$app/navigation'
-    function navToProjects() {
-        goto('/projects')
-    }
+ import {onMount} from "svelte";
+
+ function navToProjects() {
+     goto('/projects')
+ }
+ let svgObject;
+
+ // Function to handle scroll event
+ function handleScroll() {
+     const scrollPosition = window.scrollY || window.pageYOffset;
+
+     // Update SVG properties based on scroll position
+     const offsetY = scrollPosition / 2; // Adjust this value as needed
+     const scaleX = 1 + scrollPosition / 1000; // Adjust this value as needed
+
+     // Update the SVG's position and scaling based on scroll position
+     svgObject.style.transform = `translate(-50%, -50%) translateY(${offsetY}px) scaleX(${scaleX})`;
+ }
+
+ onMount(() => {
+     // get object
+     svgObject = document.getElementById("wave");
+
+     window.addEventListener('scroll', handleScroll);
+
+     // Clean up the event listener when the component unmounts
+     return () => {
+         window.removeEventListener('scroll', handleScroll);
+     };
+ });
+
 </script>
-<!-- Hero Section and background Image-->
-<div class="relative">
-    <!-- background image -->
-    <!-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/mainBuilding.jpg')"></div> -->
 
-    <!-- overlay -->
-    <div class="container mx-auto text-lg">
-        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32">
-            <div class="w-full md:w-1/2">
-                <h1 class="text-4xl font-bold leading-tight mb-4 ">My Name Is <span class="text-blue-500">Johan Olvera</span></h1>
-                <h2 class="text-2xl mb-4 font-light">An aspiring <span class="text-blue-500">Software Developer</span></h2>
-                <p class="text-gray-600 mb-8"> This is my site where I wanted to be able to showcase my projects and experiences so far. It was
-                also an opportunity for me to get more experience with ASP.NET, Svelte, and MongoDB. This was also a chance to practice
-                creating APIs, security, CI/CD, and Code Quality. Take a look at what I have so far!</p>
-            </div>
-        </div>
-    </div>
-</div>
+<style>
+    /* Style the SVG container to fix it in the center */
+    .scroll-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 11; /* Ensure it's behind other content */
+    }
+</style>
 
-<!-- about me -->
-<!-- Two sections within the same row -->
-<div class="text-lg">
-    <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between py-12 p-32 m-10">
-            <div class="w-full md:w-1/2 bg-cover">
-                <!-- image of myself -->
-<!--                <img src="/JolveraRedDoor.jpg" alt="me" class="w-72 rounded-2xl mx-auto mb-8 object-contain">-->
-            </div>
-            <div class="w-full md:w-1/2">
-                <h1 class="text-4xl font-bold leading-tight mb-6">About Me</h1>
-                <p class="text-gray-600 mb-8">I'm currently a student at St. Edward's University pursing a bachelor's in Computer Science.
-                    I'm a senior and will be graduating in December of 2024. I'm currently seeking employment and other
-                opportunities to start a career in Software Development. I'm constantly learning new frameworks and tools that
-                can be used to develop different kinds of applications, but I'm also excited to start new projects with the technologies I've learned.</p>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="z-10 relative">
+    <!-- Hero Section and background Image-->
+    <div class="relative">
+        <!-- background image -->
+        <!-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/mainBuilding.jpg')"></div> -->
 
-<!-- Experiences and Projects -->
-<div class="container mx-auto text-lg m-10 relative">
-    <div class="flex flex-col md:flex-row items-center justify-center md:justify-between py-12 p-32 -z-50">
-        <div class="w-full md:w-3/6 p-15 z-20">
-            <h1 class="text-4xl font-bold leading-tight mb-6">Experiences and Projects</h1>
-            <p class="text-gray-600 mb-8">I've gone through multiple projects, one in an Internship and the others
-            as college projects. My project at my internship introduced me to desktop application development as well as
-            giving me exposure to working with a professional team at a company. My two other projects have given me experience
-            in working with mobile app development and full stack web development with both using cloud services like Firebase
-            and Azure.</p>
-            <!-- button to lead to project page -->
-            <div class="w-full md:w-3/6 p-15">
-                <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-sm transition transform hover:bg-blue-700" on:click={navToProjects}>
-                    Take a look at my projects
-                </button>
-            </div>
-        </div>
-        <div class="w-full md:w-3/6">
-           <!-- Different programming Logos -->
-            <div class="flex flex-wrap justify-center p-20">
-                <div class="w-1/3 p-10">
-                    <img src="/c-sharp.png" alt="csharp" class="object-contain">
+        <!-- overlay -->
+        <div class="container mx-auto text-lg">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32">
+                <div class="w-full md:w-1/2">
+                    <h1 class="text-4xl font-bold leading-tight mb-4 ">My Name Is <span class="text-blue-500">Johan Olvera</span></h1>
+                    <h2 class="text-2xl mb-4 font-light">An aspiring <span class="text-blue-500">Software Developer</span></h2>
+                    <p class="text-gray-600 mb-8"> This is my site where I wanted to be able to showcase my projects and experiences so far. It was
+                    also an opportunity for me to get more experience with ASP.NET, Svelte, and MongoDB. This was also a chance to practice
+                    creating APIs, security, CI/CD, and Code Quality. Take a look at what I have so far!</p>
                 </div>
-                <div class="w-1/3 p-10">
-                    <img src="/physics.png" alt="react" class="object-contain">
-                </div>
-                <div class="w-1/3 p-10">
-                    <img src="/swift.png" alt="swift" class="object-contain">
+                <div class="w-full md:w-1/2">
+
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- about me -->
+    <!-- Two sections within the same row -->
+    <div class="text-lg">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between py-12 p-32 m-10">
+                <div class="w-full md:w-1/2 bg-cover">
+                    <!-- image of myself -->
+    <!--                <img src="/JolveraRedDoor.jpg" alt="me" class="w-72 rounded-2xl mx-auto mb-8 object-contain">-->
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h1 class="text-4xl font-bold leading-tight mb-6">About Me</h1>
+                    <p class="text-gray-600 mb-8">I'm currently a student at St. Edward's University pursing a bachelor's in Computer Science.
+                        I'm a senior and will be graduating in December of 2024. I'm currently seeking employment and other
+                    opportunities to start a career in Software Development. I'm constantly learning new frameworks and tools that
+                    can be used to develop different kinds of applications, but I'm also excited to start new projects with the technologies I've learned.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experiences and Projects -->
+    <div class="container mx-auto text-lg m-10 relative">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between py-12 p-32 -z-50">
+            <div class="w-full md:w-3/6 p-15 z-20">
+                <h1 class="text-4xl font-bold leading-tight mb-6">Experiences and Projects</h1>
+                <p class="text-gray-600 mb-8">I've gone through multiple projects, one in an Internship and the others
+                as college projects. My project at my internship introduced me to desktop application development as well as
+                giving me exposure to working with a professional team at a company. My two other projects have given me experience
+                in working with mobile app development and full stack web development with both using cloud services like Firebase
+                and Azure.</p>
+                <!-- button to lead to project page -->
+                <div class="w-full md:w-3/6 p-15">
+                    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-sm transition transform hover:bg-blue-700" on:click={navToProjects}>
+                        Take a look at my projects
+                    </button>
+                </div>
+            </div>
+            <div class="w-full md:w-3/6">
+               <!-- Different programming Logos -->
+                <div class="flex flex-wrap justify-center p-20">
+                    <div class="w-1/3 p-10">
+                        <img src="/c-sharp.png" alt="csharp" class="object-contain">
+                    </div>
+                    <div class="w-1/3 p-10">
+                        <img src="/physics.png" alt="react" class="object-contain">
+                    </div>
+                    <div class="w-1/3 p-10">
+                        <img src="/swift.png" alt="swift" class="object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <object type="image/svg+xml" data="/wavesOpacity.svg" id="wave"></object>
+    </div>
 </div>
+
