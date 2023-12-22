@@ -2,14 +2,21 @@
     import '../app.css'
 </script>
 
-<div class="p-4">
+<style>
+	/* This style should be in your CSS file */
+	.transition-font {
+		transition: font-size 0.3s ease-in-out;
+	}
+</style>
+
+<div class="p-4 bg-pastelGreen text-greenText">
 	<div class="container mx-auto px-4">
 		<nav class="flex items-center justify-center h-16">
 			<div class="flex">
-				<a href="/" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Home</a>
-				<a href="/projects" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Projects/Experiences</a>
-				<a href="/" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Contact</a>
-				<a href="/blog" class="px-4 py-2 text-xl transition duration-300 transform hover:text-blue-500">Blog</a>
+				<a href="/" class="px-4 py-2 text-xl transition-font hover:text-2xl">Home</a>
+				<a href="/projects" class="px-4 py-2 text-xl transition-font hover:text-2xl">Projects/Experiences</a>
+				<a href="/" class="px-4 py-2 text-xl transition-font hover:text-2xl">Contact</a>
+				<a href="/blog" class="px-4 py-2 text-xl transition-font hover:text-2xl">Blog</a>
 			</div>
 		</nav>
 	</div>

@@ -1,67 +1,24 @@
 <script>
  import {goto} from '$app/navigation'
- import {onMount} from "svelte";
+ import ShapeBox from "$lib/ShapeBox.svelte";
 
  function navToProjects() {
      goto('/projects')
  }
- let svgObject;
-
- // Function to handle scroll event
- function handleScroll() {
-     const scrollPosition = window.scrollY || window.pageYOffset;
-
-     // Update SVG properties based on scroll position
-     const offsetY = scrollPosition / 2; // Adjust this value as needed
-     const scaleX = 1 + scrollPosition / 1000; // Adjust this value as needed
-
-     // Update the SVG's position and scaling based on scroll position
-     svgObject.style.transform = `translate(-50%, -50%) translateY(${offsetY}px) scaleX(${scaleX})`;
- }
-
- onMount(() => {
-     // get object
-     svgObject = document.getElementById("wave");
-
-     window.addEventListener('scroll', handleScroll);
-
-     // Clean up the event listener when the component unmounts
-     return () => {
-         window.removeEventListener('scroll', handleScroll);
-     };
- });
 
 </script>
 
-<style>
-    /* Style the SVG container to fix it in the center */
-    .scroll-container {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 11; /* Ensure it's behind other content */
-    }
-</style>
-
 <div class="z-10 relative">
     <!-- Hero Section and background Image-->
-    <div class="relative">
-        <!-- background image -->
-        <!-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/mainBuilding.jpg')"></div> -->
-
-        <!-- overlay -->
-        <div class="container mx-auto text-lg">
+    <div class="relative bg-pastelGreen">
+        <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32">
-                <div class="w-full md:w-1/2">
-                    <h1 class="text-4xl font-bold leading-tight mb-4 ">My Name Is <span class="text-blue-500">Johan Olvera</span></h1>
-                    <h2 class="text-2xl mb-4 font-light">An aspiring <span class="text-blue-500">Software Developer</span></h2>
-                    <p class="text-gray-600 mb-8"> This is my site where I wanted to be able to showcase my projects and experiences so far. It was
-                    also an opportunity for me to get more experience with ASP.NET, Svelte, and MongoDB. This was also a chance to practice
-                    creating APIs, security, CI/CD, and Code Quality. Take a look at what I have so far!</p>
+                <div class="w-full md:w-1/2 text-greenText mb-10">
+                    <h1 class="font-bold text-9xl">Hi.</h1>
+                    <h2 class="font-light text-9xl">I'm Johan</h2>
                 </div>
                 <div class="w-full md:w-1/2">
-
+                    <ShapeBox />
                 </div>
             </div>
         </div>
@@ -119,9 +76,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="scroll-container">
-        <object type="image/svg+xml" data="/wavesOpacity.svg" id="wave"></object>
     </div>
 </div>
 
