@@ -10,7 +10,8 @@ export default {
         redText: '#6A0510',
         pastelPurple: '#F198D7',
         purpleText: '#463847',
-        purpleButtonColor: "#5E254D"
+        purpleButtonColor: "#5E254D",
+        purpleHover: '#511840'
       }
     },
   },
