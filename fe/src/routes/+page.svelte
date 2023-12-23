@@ -52,9 +52,9 @@
                     to full stack web development.
                 </p>
                 <!-- button to lead to project page -->
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-1/2 mx-5">
                     <button class="bg-purpleButtonColor text-gray-300 font-bold py-2 px-4 rounded-sm transition transform hover:bg-purpleHover" on:click={navToProjects}>
-                        Take a look at my projects
+                        Check Them Out
                     </button>
                 </div>
             </div>
