@@ -17,7 +17,12 @@
         Composite = Matter.Composite
 
         // creating an engine
-        var engine = Engine.create();
+        var engine = Engine.create({
+            gravity: {
+                x: 0,
+                y: 1
+            }
+        });
 
         // creating renderer
         var render = Render.create({
@@ -32,21 +37,21 @@
         });
 
         // create two boxes
-        var box = Bodies.rectangle(80, -400, 80, 80, {
+        var box = Bodies.rectangle(80, -1000, 80, 80, {
             render: {
                 fillStyle: "transparent",
                 strokeStyle: "#3D622D",
                 lineWidth: 10
             },
-            restitution: 1.15
+            restitution: 1
         });
-        var triangle = Bodies.polygon(200, -500, 3, 50, {
+        var triangle = Bodies.polygon(200, -1500, 3, 50, {
             render: {
                 fillStyle: "transparent",
                 strokeStyle: "#3D622D",
                 lineWidth: 10
             },
-            restitution: 1.15
+            restitution: 1
         });
         // rectangle (x, y, width, height)
         var ground = Bodies.rectangle(renderWidth/2, renderHeight, 1000, 10, {isStatic: true});

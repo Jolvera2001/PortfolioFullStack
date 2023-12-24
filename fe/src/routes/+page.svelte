@@ -1,21 +1,45 @@
 <script>
  import {goto} from '$app/navigation'
  import ShapeBox from "$lib/ShapeBox.svelte";
+    import { onMount } from 'svelte';
 
  function navToProjects() {
      goto('/projects')
  }
 
+ let showText = false;
+ onMount(() => {
+        setTimeout(() => {
+            showText = true;
+        }, 100);
+ });
+
 </script>
 
+<style>
+    .fade-in-hi {
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Adjust the timing here */
+}
+
+.fade-in-name {
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Adjust the timing here */
+}
+
+    .fade-out {
+        opacity: 0;
+}
+</style>
+
 <div class="z-10 relative">
-    <!-- Hero Section and background Image-->
+    <!-- Hero Section -->
     <div class="relative bg-pastelGreen">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between p-32">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between px-16 py-8">
                 <div class="w-full md:w-1/2 text-greenText">
-                    <h1 class="font-bold text-9xl">Hi.</h1>
-                    <h2 class="font-light text-9xl">I'm Johan</h2>
+                    <h1 class="font-bold text-9xl hi-text {showText ? 'fade-in-hi' : 'fade-out'}">Hi.</h1>
+                    <h2 class="font-light text-9xl name-text {showText ? 'fade-in-name' : 'fade-out'}">I'm Johan</h2>
                 </div>
                 <div class="w-full md:w-1/2">
                     <ShapeBox />
