@@ -3,7 +3,6 @@
 </script>
 
 <style>
-	/* This style should be in your CSS file */
 	.transition-font {
 		transition: font-size 0.3s ease-in-out;
 	}
