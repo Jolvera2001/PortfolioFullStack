@@ -6,6 +6,8 @@ export default {
       colors: {
         pastelGreen: '#E2F5A0',
         greenText: '#3D622D',
+        pastelBlue: "#a0e3f5",
+        blueText: "#25474f",
         pastelRed: '#FAC9C2',
         redText: '#6A0510',
         pastelPurple: '#F198D7',
