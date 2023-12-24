@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Test Blog Update",
+        "description": "Dynamically Making Blog Sections!",
+        "date":"December 23rd, 2023",
+        "content": "After working more with SvelteKit and Tailwind CSS, I'm able to make blogs through jsons!"
+    },
+    {
+        "title": "Test Blog Update",
+        "description": "Dynamically Making Blog Sections!",
+        "date": "December 23rd, 2023",
+        "content": "After working more with SvelteKit and Tailwind CSS, I'm able to make blogs through jsons!"
+    }
+]
