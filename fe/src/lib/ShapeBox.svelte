@@ -3,6 +3,7 @@
     import * as Matter from 'matter-js';
 
     let Engine, Render, Runner, Bodies, Composite;
+    let forceDirection = 0.0;
     
     onMount(() => {
         // setting up variables
@@ -25,24 +26,40 @@
             options: {
                 width: renderWidth,
                 height: renderHeight,
-                wireframes: true,
-                background: '#3D622D'
+                wireframes: false,
+                background: '#E2F5A0'
             },
         });
 
         // create two boxes
-        var boxA = Bodies.rectangle(80, -400, 80, 80, {
+        var box = Bodies.rectangle(80, -400, 80, 80, {
             render: {
                 fillStyle: "transparent",
                 strokeStyle: "#3D622D",
-                lineWidth: 5
-            }
+                lineWidth: 10
+            },
+            restitution: 1.15
         });
-        var boxB = Bodies.rectangle(120, -500, 80, 80);
-        var ground = Bodies.rectangle(renderWidth/2, renderHeight+5, 350, 10, {isStatic: true});
+        var triangle = Bodies.polygon(200, -500, 3, 50, {
+            render: {
+                fillStyle: "transparent",
+                strokeStyle: "#3D622D",
+                lineWidth: 10
+            },
+            restitution: 1.15
+        });
+        // rectangle (x, y, width, height)
+        var ground = Bodies.rectangle(renderWidth/2, renderHeight, 1000, 10, {isStatic: true});
+        var leftWall = Bodies.rectangle(-5.5, 0, 10, 1000, {isStatic: true})
+        var rightWall = Bodies.rectangle(renderWidth+5.5, 0, 10, 1000, {isStatic: true})
+
+        //mouse constraint!
+        const mouseConstraint = Matter.MouseConstraint.create(engine, {
+            element: render.canvas,
+        }); 
 
         // adding all components to the world
-        Composite.add(engine.world, [boxA, boxB, ground]);
+        Composite.add(engine.world, [box, triangle, ground, leftWall, rightWall, mouseConstraint]);
 
         // run renderer
         Render.run(render)
@@ -52,9 +69,24 @@
 
         // run the engine
         Runner.run(runner, engine);
-    })
+
+        // Fun stuff Here ***********************************************
+        window.addEventListener('scroll', () => {
+            //detect scroll direction
+            const scrolled = window.scroll || window.pageYOffset;
+            const scrollDirection = scroll > forceDirection ? 1 : -1;
+
+            const bodies = Composite.allBodies(engine.world);
+            bodies.forEach(body => {
+                Matter.Body.applyForce(body, body.position, { x: 0, y: -scrollDirection * 0.008 })
+            });
+
+            forceDirection = scrolled;
+        });
+    });
+
 </script>
 
-<div id="matter-container" class="ml-5 translate-x-16 -translate-y-5 rounded-full overflow-hidden">
+<div id="matter-container" class="ml-5 translate-x-16 -translate-y-5">
 
 </div>
