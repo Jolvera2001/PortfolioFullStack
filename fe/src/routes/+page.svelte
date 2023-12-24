@@ -18,7 +18,7 @@
                     <h2 class="font-light text-9xl">I'm Johan</h2>
                 </div>
                 <div class="w-full md:w-1/2">
-                    <!-- <ShapeBox /> -->
+                    <ShapeBox />
                 </div>
             </div>
         </div>
