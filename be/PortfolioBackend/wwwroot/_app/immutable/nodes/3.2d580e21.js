@@ -1,4 +1,4 @@
-import{s as Ce,n as ve,o as we}from"../chunks/scheduler.48c2277c.js";import{S as Pe,i as Me,g as N,h as Q,x as ae,k as $,a as Ie,f as X,m as ye,s as ee,r as Be,j as Y,n as Se,c as te,u as De,y as W,v as Le,z as Re,d as Ve,t as Fe,w as He}from"../chunks/index.5f923553.js";import{j as ke}from"../chunks/singletons.7bdf1068.js";const Oe=ke("goto");var ge=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{},Ae={exports:{}};/*!
+import{s as Ce,n as ve,o as we}from"../chunks/scheduler.48c2277c.js";import{S as Pe,i as Me,g as N,h as Q,x as ae,k as $,a as Ie,f as X,m as ye,s as ee,r as Be,j as Y,n as Se,c as te,u as De,y as W,v as Le,z as Re,d as Ve,t as Fe,w as He}from"../chunks/index.5f923553.js";import{j as ke}from"../chunks/singletons.b8e984fa.js";const Oe=ke("goto");var ge=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{},Ae={exports:{}};/*!
  * matter-js 0.19.0 by @liabru
  * http://brm.io/matter-js/
  * License MIT
