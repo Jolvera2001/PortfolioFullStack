@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* This is for the scroll bar */
+body {
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #11353d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Thumb color */
+    border-radius: 6px;
+    /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Thumb color on hover */
+}

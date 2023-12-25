@@ -2,7 +2,20 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        pastelGreen: '#E2F5A0',
+        greenText: '#3D622D',
+        pastelBlue: "#a0e3f5",
+        blueText: "#25474f",
+        pastelRed: '#FAC9C2',
+        redText: '#6A0510',
+        pastelPurple: '#F198D7',
+        purpleText: '#463847',
+        purpleButtonColor: "#5E254D",
+        purpleHover: '#511840'
+      }
+    },
   },
   plugins: [],
 }
