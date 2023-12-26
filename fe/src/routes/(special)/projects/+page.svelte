@@ -47,10 +47,11 @@
     <div class="bg-blueText">
         <div class="container mx-auto px-20 py-5">
             <div class="flex flex-col items-center" transition:fade>
-                <div class="flec flex-row">
-                    <div class="text-pastelBlue w-3/5 text-xl p-2">
+                <div class="flex flex-row">
+                    <div class="text-pastelBlue w-3/4 text-xl p-2">
                         <h2 class="text-2xl font-light">Software Engineering Internship</h2>
                         <h2 class="text-2xl font-light">NI (National Instruments)</h2>
+                        <h2 class="text-2xl font-light">Skills: C#, WPF, JSON Serialization, Agile Practices, Version Control, Team Collaboration</h2>
                         <h3 class="font-light">May 2023 - August 2023</h3>
                         <h4 class="font-medium py-2">Overview</h4>
                         <p>
@@ -77,7 +78,7 @@
                             <li>Documentation for developing applications</li>
                         </ul> -->
                     </div>
-                    <div class="w-2/5">
+                    <div class="w-1/4">
                         <!-- Little icons or animation here -->
                     </div>
                 </div>
@@ -87,70 +88,69 @@
     
 {:else if selectedTab === 'projects'}
     <div class="bg-blueText text-pastelBlue">
-        <div class="container mx-auto px-40 py-20">
+        <div class="container mx-auto px-20 py-5">
             <div class="flex flex-col items-center" transition:fade>
-                <div class="m-8">
-                    <h2 class="text-xl font-light">Goat Places</h2>
-                    <h2 class="text-xl font-light">Skills: Full Stack Web Development, Cloud PaaS, Cloud DB</h2>
-                    <h3 class="text-lg font-light">August 2023 - Current</h3>
-                    <h4 class="text-lg font-medium py-2">Overview</h4>
-                    <p>
-                        The project is a web application that would serve to solve the issue of coordinating events on our campus
-                        as well as serve as a way to find events and buildings for new students. The project was developed using
-                        React for the frontend, Node.js for the backend, MongoDB Atlas for the database, and Azure App Services
-                        as our hosting platform. As a small team of three, we could meet on a weekly basis to discuss our progress and
-                        features to develop as our project progressed. We have also decided to change our backend to Ktor, a Kotlin
-                        server framework, in order to learn more about Kotlin and backends besides Node.js because of its issues with
-                        being slow.
-                    </p>
-                    <h4 class="text-lg font-medium py-2">Impact</h4>
-                    <p>
-                        I was able to gain experience in all of our technologies, being able to develop the frontend and backend of
-                        the application. I was also able to learn more about cloud technologies like Azure in order to host our application
-                        and MongoDB Atlas as a way to store our data. Our web application is blocked because of issues with Node.js, having
-                        us unable to login users, but a landing page was developed and a home page as well in order to keep our progress forward.
-                        I was able to replace our server with Ktor and learn more about it to serve our files. I plan to redo our APIs moving forward
-                        as well as moving and refactoring files onto the new repository. Ktor also gave me a change to learn how to set up CI/CD
-                        using github workflows to automatically update and deploy our application when we push to our main branch.
-                    </p>
-                    <h4 class="text-lg font-medium py-2">Skills learned</h4>
-                    <ul class="list-disc">
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>MongoDB Atlas</li>
-                        <li>Azure App Services</li>
-                        <li>Ktor</li>
-                        <li>Team Collaboration</li>
-                        <li>Full Stack Web Development</li>
-                        <li>CI/CD Pipeline (github workflow)</li>
-                    </ul>
+                <div class="flex flex-row">
+                    <div class="w-3/4 text-xl p-2 mb-5">
+                        <h2 class="text-2xl font-light">Goat Places</h2>
+                        <h2 class="text-2xl font-light">Skills: Full Stack Web Development, Azure, MongoDB Atlas</h2>
+                        <h3 class="text-lg font-light">August 2023 - Current</h3>
+                        <h4 class="text-lg font-medium py-2">Overview</h4>
+                        <p>
+                            This Project was planned to be a web application that would help new and current students be able to coordinate 
+                            events on campus easily as well as navigate it for their classes. This has been developed by a small team of 
+                            three, where we would meet up weekly to discuss our progress, steps moving forward, and plans for presentations.
+                            We decided on a tech stack of React as our front end, Ktor as our backend (used to be Node.js), MongoDB Atlas
+                            as our Database, and Azure as our place to deploy. We currently have the project on halt, but We have a Github
+                            with a CI/CD set up for quick deployment.
+                        </p>
+                        <h4 class="text-lg font-medium py-2">Impact</h4>
+                        <p>
+                            I was able to learn and gain experience on full stack development, understanding how React works, how MongoDB works, 
+                            our backend and its purpose, etc. Connecting everthing was another issue in itself, but we have things set up so that
+                            once we connect things together, it should be working close to how we want it. We still have a lot of work to do: including
+                            setting up schemas for our database, authentication, and some features, but this has been a great experience so far
+                            in terms of developer roles, now we need to focus on delivering what we want our app to do.
+                        </p>
+                        <!-- <h4 class="text-lg font-medium py-2">Skills learned</h4>
+                        <ul class="list-disc">
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>MongoDB Atlas</li>
+                            <li>Azure App Services</li>
+                            <li>Ktor</li>
+                            <li>Team Collaboration</li>
+                            <li>Full Stack Web Development</li>
+                            <li>CI/CD Pipeline (github workflow)</li>
+                        </ul> -->
+                    </div>
                 </div>
-                <div class="m-8">
-                    <h2 class="text-xl font-light">SvelteKit Portfolio Page</h2>
-                    <h2 class="text-xl font-light">Skills: SvelteKit, CSS Frameworks</h2>
-                    <h3 class="text-lg font-light">December 2023</h3>
-                    <h4 class="text-lg font-medium py-2">Overview</h4>
-                    <p>
-                        This project was something for me to learn more about SvelteKit since I've heard a lot of good things about it
-                        as well as Tailwind CSS streamlining the styling process. I needed a portfolio page to showcase my projects and
-                        decided it was a good time to put this in action using these technologies. It was a very smooth process compared to
-                        other technologies I've used, being able to quickly set up a project and start developing. Overall the majority of this website was made
-                        within a few days and there can be much to improve even now. I'm just happy I have my own website to be able to showcase my
-                        projects and skills.
-                    </p>
-                    <h4 class="text-lg font-medium py-2">Impact</h4>
-                    <p>
-                        I was able to learn more about SvelteKit and the capabilities that it had, researching the documentation and
-                        learning how to use it for static site generation or as a SPA if I ever needed to make one using the same framework.
-                        Tailwind CSS was what took up the majority of my learning time, but once I had a good grasp of it, it became easier
-                        as I kept building the site. Thanks to my past experience in Azure, I learned to use the Azure Static Web App service
-                        and set up a github workflow to automatically deploy my site when I push to my main branch.
-                    </p>
-                    <h4 class="text-lg font-medium py-2">Skills learned</h4>
-                    <ul class="list-disc">
-                        <li>SvelteKit and Svelte</li>
-                        <li>Tailwind CSS</li>
-                    </ul>
+                <div class="flex flex-row">
+                    <div class="w-3/4 text-xl p-2">
+                        <h2 class="text-2xl font-light">SvelteKit Portfolio Page</h2>
+                        <h2 class="text-2xl font-light">Skills: SvelteKit, Tailwind CSS, ASP.NET Core, MongoDB Atlas</h2>
+                        <h3 class="text-lg font-light">December 2023</h3>
+                        <h4 class="text-lg font-medium py-2">Overview</h4>
+                        <p>
+                            This started off as a very small project, but it very quickly became something more
+                            involved, since I first thought "It would be cool to have a blogging system", and I ended
+                            up using ASP.NET Core (even though it could be considered overkill for such a small project).
+                            Eventually, I made a complete overhaul of the whole site and I wanted to make it something that was
+                            "Me". So this is what I came up with!
+                        </p>
+                        <h4 class="text-lg font-medium py-2">Impact</h4>
+                        <p>
+                            Using what I already knew about C# and Azure, I was able to make an API server using ASP.NET Core,
+                            as well as using it to serve my static files when building my sveltekit frontend. My blogging system
+                            will use API calls to my MongoDB Atlas Database in order to populate the blog page. I plan to implement a 
+                            separate page where I can log in and create blogs much more easily, but so far this is what I have.
+                        </p>
+                        <!-- <h4 class="text-lg font-medium py-2">Skills learned</h4>
+                        <ul class="list-disc">
+                            <li>SvelteKit and Svelte</li>
+                            <li>Tailwind CSS</li>
+                        </ul> -->
+                    </div>
                 </div>
                 <div class="m-8">
                     <h2 class="text-xl font-light">ATrails</h2>
