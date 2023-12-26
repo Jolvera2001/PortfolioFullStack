@@ -29,8 +29,8 @@
 </style>
 
 <!-- tab selection buttons -->
-<div class="flex justify-evenly bg-pastelBlue text-3xl text-blueText">
-    <button class="p-5 my-5 transition-font hover:text-4xl"
+<div class="flex justify-evenly bg-blueText text-pastelBlue text-3xl">
+    <button class="p-5 transition-font hover:text-4xl"
         class:selected={selectedTab === 'experience' ? 'selected' : ''} 
         on:click={() => switchTab('experience')}>
         Experience
@@ -44,13 +44,13 @@
 
 <!-- tab content -->
 {#if selectedTab === 'experience'}
-    <div class="bg-pastelBlue">
-        <div class="container mx-auto px-20 py-10">
+    <div class="bg-blueText">
+        <div class="container mx-auto px-20 py-5">
             <div class="flex flex-col items-center" transition:fade>
                 <div class="flec flex-row">
-                    <div class="m-8 text-blueText w-3/5 text-2xl">
-                        <h2 class="text-3xl font-light">Software Engineering Internship</h2>
-                        <h2 class="text-3xl font-light">NI (National Instruments)</h2>
+                    <div class="text-pastelBlue w-3/5 text-xl p-2">
+                        <h2 class="text-2xl font-light">Software Engineering Internship</h2>
+                        <h2 class="text-2xl font-light">NI (National Instruments)</h2>
                         <h3 class="font-light">May 2023 - August 2023</h3>
                         <h4 class="font-medium py-2">Overview</h4>
                         <p>
@@ -59,9 +59,9 @@
                             weekly, and with the team on daily standups. My project was to develop a desktop application for
                             one of their testing softwares.
                         </p>
-                        <h4 class="font-medium py-2">Impact</h4>
+                        <h4 class="font-medium pt-8 pb-2">Impact</h4>
                         <p>
-                            I surpassed expactations by developing a prototype within the first few weeks, and kept developing 
+                            I surpassed expectations by developing a prototype within the first few weeks, and kept developing 
                             features for the project until my internship ended. I also got to demo the application to the product manager
                             as well as the team. I followed Agile practices and Version control throughout my internship.
                         </p>
@@ -78,13 +78,15 @@
                         </ul> -->
                     </div>
                     <div class="w-2/5">
+                        <!-- Little icons or animation here -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 {:else if selectedTab === 'projects'}
-    <div>
+    <div class="bg-blueText text-pastelBlue">
         <div class="container mx-auto px-40 py-20">
             <div class="flex flex-col items-center" transition:fade>
                 <div class="m-8">
