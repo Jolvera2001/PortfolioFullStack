@@ -4,7 +4,7 @@
 	}
 </style>
 
-<div class="p-4 bg-pastelGreen text-greenText">
+<div class="p-4 bg-blueText text-pastelBlue">
 	<div class="container mx-auto px-4">
 		<nav class="flex items-center justify-center h-16">
 			<div class="flex">
@@ -19,4 +19,3 @@
 </div>
 
 <slot />
-
