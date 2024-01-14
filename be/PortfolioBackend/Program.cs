@@ -31,6 +31,29 @@ builder.Services.AddSingleton<BlogService>();
 builder.Services.Configure<BlogDatabaseSettings>(
     builder.Configuration.GetSection("BlogDatabase"));
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidIssuer = "something",
+        ValidAudience = "something",
+        // TO DO: Figure out what this key thing is
+        //IssuerSigningKey = new SymmetricSecurityKey
+        //(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]!)),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true`
+    };
+});
+
+builder.Services.AddAuthorization();
+
 builder.Services.AddControllers();
 
 //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -48,7 +71,11 @@ var app = builder.Build();
 
 // HTTP request Pipeline
 app.UseHttpsRedirection();
+
+// Authentication and Authorication
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.UseDefaultFiles();
