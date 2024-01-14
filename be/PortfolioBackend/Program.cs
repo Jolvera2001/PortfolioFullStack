@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using PortfolioBackend.Models;
 using PortfolioBackend.Services;
 using System.Configuration;
 using System.Net.NetworkInformation;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
