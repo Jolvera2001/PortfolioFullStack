@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using PortfolioBackend.Models;
 using PortfolioBackend.Services;
-using System.Configuration;
-using System.Net.NetworkInformation;
-using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,26 +28,6 @@ builder.Services.AddSingleton<BlogService>();
 builder.Services.Configure<BlogDatabaseSettings>(
     builder.Configuration.GetSection("BlogDatabase"));
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidIssuer = "something",
-        ValidAudience = "something",
-        // TO DO: Figure out what this key thing is
-        //IssuerSigningKey = new SymmetricSecurityKey
-        //(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]!)),
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true`
-    };
-});
 
 builder.Services.AddAuthorization();
 
@@ -72,7 +49,7 @@ var app = builder.Build();
 // HTTP request Pipeline
 app.UseHttpsRedirection();
 
-// Authentication and Authorication
+// Authentication and Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 

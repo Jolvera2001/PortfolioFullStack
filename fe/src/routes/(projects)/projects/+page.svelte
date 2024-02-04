@@ -29,7 +29,7 @@
 </style>
 
 <!-- tab selection buttons -->
-<div class="flex justify-evenly bg-blueText text-pastelBlue text-3xl">
+<div class="flex justify-evenly bg-purpleText text-pastelPurple text-3xl">
     <button class="p-5 transition-font hover:text-4xl"
         class:selected={selectedTab === 'experience' ? 'selected' : ''} 
         on:click={() => switchTab('experience')}>
@@ -44,11 +44,11 @@
 
 <!-- tab content -->
 {#if selectedTab === 'experience'}
-    <div class="bg-blueText">
+    <div class="bg-purpleText text-pastelPurple">
         <div class="container mx-auto px-20 py-5">
             <div class="flex flex-col items-center" transition:fade>
                 <div class="flex flex-row">
-                    <div class="text-pastelBlue w-3/4 text-xl p-2">
+                    <div class="w-3/4 text-xl p-2">
                         <h2 class="text-2xl font-light">Software Engineering Internship</h2>
                         <h2 class="text-2xl font-light">NI (National Instruments)</h2>
                         <h2 class="text-2xl font-light">Skills: C#, WPF, JSON Serialization, Agile Practices, Version Control, Team Collaboration</h2>
@@ -87,7 +87,7 @@
     </div>
     
 {:else if selectedTab === 'projects'}
-    <div class="bg-blueText text-pastelBlue">
+    <div class="bg-purpleText text-pastelPurple">
         <div class="container mx-auto px-20 py-5">
             <div class="flex flex-col items-center" transition:fade>
                 <div class="flex flex-row">
