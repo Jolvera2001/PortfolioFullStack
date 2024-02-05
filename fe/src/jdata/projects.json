@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Goat Places",
+        "skills": "React, Vite, Azure, MongoDB Atlas, ASP.NET Core",
+        "date": "August 2023 - Current",
+        "overview": "This Project was planned to be a web application that would help new and current students be able to coordinate events on campus easily as well as navigate it for their classes. This has been developed by a small team of three, where we would meet up weekly to discuss our progress, steps moving forward, and plans for presentations. We decided on a tech stack of React as our front end, ASP.NET Core (used to be Node.js), MongoDB Atlas as our Database, and Azure as our place to deploy. We currently have the project on halt, but we have a Github with a CI/CD set up for quick deployment.",
+        "impact": "I was able to learn and gain experience on full stack development, understanding how React works, how MongoDB works, our backend and its purpose, etc. Connecting everything was another issue in itself, but we have things set up so that once we connect things together, it should be working close to how we want it. We still have a lot of work to do, including setting up schemas for our database, authentication, and some features, but this has been a great experience so far in terms of developer roles. Now we need to focus on delivering what we want our app to do."
+    },
+    {
+        "title": "ATrails",
+        "skills": "Mobile Development, Cloud BaaS",
+        "date": "November 2023 - December 2023",
+        "overview": "ATrails is an app designed to be a social hub for hikers and trail runners, allowing users to make posts, follow other users, and track their hikes and runs. The project was for a mobile development course which focused on IOS development. This project was developed using SwiftUI and Firebase as a backend, both of which was outside of the scope of what the class taught, only introducing us to the basics of swiftUI. This decision was made on my part in order to learn more about IOS development and using a cloud backend if I ever want to use it for another project. I also learned how to use the MVC design pattern in order to structure the project and make it easier to maintain and add features to. The project was also developed using agile practices, using Azure Devops as a way to organize my features and tasks.",
+        "impact": "I was able to learn more about mobile development and how to utilize a cloud backend for a mobile application, being able to write and read data from Firestore in order to populate post feeds for users and have it be able to search for group chats as well as join them. You could also make a post which would be sent onto the database and be able to be read by other users. Many other features like the group chat and the hike tracker were not able to be finished since I only had a month to work on the project, but for the time I had, I'm very proud of being able to dynamically populate a post feed and be able to work with technologies that were very new to me."
+    },
+    {
+        "title": "SvelteKit Portfolio Website",
+        "skills": "SvelteKit, Tailwind CSS, ASP.NET Core, MongoDB Atlas",
+        "date": "December 2023 - Current",
+        "overview": "This started off as a very small project, but it very quickly became something more involved, since I first thought \"It would be cool to have a blogging system\", and I ended up using ASP.NET Core (even though it could be considered overkill for such a small project). Eventually, I made a complete overhaul of the whole site and I wanted to make it something that was \"Me\". So this is what I came up with!",
+        "impact": "Using what I already knew about C# and Azure, I was able to make an API server using ASP.NET Core, as well as using it to serve my static files when building my sveltekit frontend. My blogging system will use API calls to my MongoDB Atlas Database in order to populate the blog page. I plan to implement a separate page where I can log in and create blogs much more easily, but so far this is what I have."
+    }
+]
