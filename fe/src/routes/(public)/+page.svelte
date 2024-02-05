@@ -7,6 +7,10 @@
      goto('/projects')
  }
 
+ function navToAboutMe() {
+    goto('/aboutme')
+ }
+
  let showText = false;
  onMount(() => {
         setTimeout(() => {
@@ -62,8 +66,8 @@
                         I am an aspiring Software Developer currently in college. This is my site to showcase my work!
                     </p>
                     <div class="w-full md:w-1/2 mx-5">
-                        <button class="bg-redText text-gray-300 font-bold py-2 px-4 rounded-sm transition transform hover:bg-redHover" on:click={navToProjects}>
-                            Check Them Out
+                        <button class="bg-redText text-gray-300 font-bold py-2 px-4 rounded-sm transition transform hover:bg-redHover" on:click={navToAboutMe}>
+                            About me
                         </button>
                     </div>
                 </div>
