@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PortfolioBackend.Models;
 using PortfolioBackend.Services;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Policy;
 
 namespace PortfolioBackend.Controllers
 {
@@ -34,6 +32,7 @@ namespace PortfolioBackend.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Post(Blog newBlog)
         {
             await _blogService.CreateAsync(newBlog);

@@ -10,6 +10,7 @@ export default {
         blueText: "#25474f",
         pastelRed: '#FAC9C2',
         redText: '#6A0510',
+        redHover: '#4f020b',
         pastelPurple: '#F198D7',
         purpleText: '#463847',
         purpleButtonColor: "#5E254D",

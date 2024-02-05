@@ -1,9 +1,9 @@
-using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using PortfolioBackend.Models;
 using PortfolioBackend.Services;
-using System.Configuration;
-using System.Net.NetworkInformation;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +28,9 @@ builder.Services.AddSingleton<BlogService>();
 builder.Services.Configure<BlogDatabaseSettings>(
     builder.Configuration.GetSection("BlogDatabase"));
 
+
+builder.Services.AddAuthorization();
+
 builder.Services.AddControllers();
 
 //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -45,7 +48,11 @@ var app = builder.Build();
 
 // HTTP request Pipeline
 app.UseHttpsRedirection();
+
+// Authentication and Authorization
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.UseDefaultFiles();
