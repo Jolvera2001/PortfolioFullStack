@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import ExpContainer from "$lib/ExpContainer.svelte";
     import Projects from "$lib/projects.json"
     import Experience from "$lib/experience.json"
@@ -23,12 +24,21 @@
         selectedTab = tab;
     }
 
+    let selectedExp = null;
     let selectedProj = null;
 
-    function handleShowPopup(event) {
+    function handleShowPopupExp(event) {
+        selectedExp = event.detail.exp;
+    }
+
+    function handleShowPopupProj(event) {
         selectedProj = event.detail.proj;
     }
 
+    onMount(() => {
+        selectedExp = null;
+        selectedProj = null;
+    });
 </script>
 
 <style>
@@ -62,7 +72,7 @@
         <div class="container mx-auto px-20 py-5">
             <div class="grid grid-cols-3 gap-4 m-5 h-screen place-items-start justify-items-center">
                 {#each Experience as exp}
-                    <ExpContainer {exp} on:showPopUp={handleShowPopup}/>
+                    <ExpContainer {exp} on:showPopUpExp={handleShowPopupExp}/>
                 {/each}
             </div>
         </div>
@@ -78,4 +88,12 @@
             </div>
         </div>
     </div>
+{/if}
+
+{#if selectedProj}
+
+{/if}
+
+{#if selectedExp}
+
 {/if}

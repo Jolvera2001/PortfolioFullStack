@@ -5,7 +5,7 @@
     const dispatch = createEventDispatcher();
 
     function showPopUp() {
-        dispatch('showPopUp', { proj });
+        dispatch('showPopUpProj', { proj });
     }
 </script>
 <div class="w-44 h-60 text-center" on:click={showPopUp}>
