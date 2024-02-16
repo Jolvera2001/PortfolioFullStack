@@ -2,7 +2,9 @@
     import ExpContainer from "$lib/ExpContainer.svelte";
     import Projects from "$lib/projects.json"
     import Experience from "$lib/experience.json"
-    import ProjContainer from "../../../lib/ProjContainer.svelte";
+    import ProjContainer from "$lib/ProjContainer.svelte";
+    import ExpPopup from "$lib/ExpPopup.svelte"
+    import ProjPopup from "$lib/ProjPopup.svelte"
 
     // transition
     function fade(node, { delay = 100, duration = 300 }) {
@@ -20,6 +22,13 @@
     function switchTab(tab) {
         selectedTab = tab;
     }
+
+    let selectedProj = null;
+
+    function handleShowPopup(event) {
+        selectedProj = event.detail.proj;
+    }
+
 </script>
 
 <style>
@@ -53,7 +62,7 @@
         <div class="container mx-auto px-20 py-5">
             <div class="grid grid-cols-3 gap-4 m-5 h-screen place-items-start justify-items-center">
                 {#each Experience as exp}
-                    <ExpContainer {exp}/>
+                    <ExpContainer {exp} on:showPopUp={handleShowPopup}/>
                 {/each}
             </div>
         </div>
